@@ -51,6 +51,7 @@ public class Menu {
         }
     }
 
+    //funcion de subirn nuevo producot
     private void nuevoProducto() {
         int cantidad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de productos que va a ingresar"));
 
@@ -62,8 +63,13 @@ public class Menu {
         }
         System.out.println("Registro de producto exitoso");
     }
-
+    
+    
+ 
+    //funcion de eliiminar producto
+    
     private void eliminacionDeProducto() {
+    	
         String nombreProducto = JOptionPane.showInputDialog("Ingrese el nombre del producto a eliminar");
         int index = listaProductos.indexOf(nombreProducto);
 
@@ -76,22 +82,25 @@ public class Menu {
         }
     }
 
+    
+    //actualizacion de producto con ayuda
     private void actualizacionProductos() {
         String nombreProducto = JOptionPane.showInputDialog("Ingrese el nombre del producto a actualizar");
-        int index = listaProductos.indexOf(nombreProducto);
+        int nuevo = listaProductos.indexOf(nombreProducto);
 
-        if (index >= 0) {
+        if (nuevo >= 0) {
             String nuevoNombre = JOptionPane.showInputDialog("Ingrese el nuevo nombre del producto");
             int nuevaCantidad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva cantidad del producto"));
 
-            listaProductos.set(index, nuevoNombre);
-            CantidadProductos.set(index, nuevaCantidad);
+            listaProductos.set(nuevo, nuevoNombre);
+            CantidadProductos.set(nuevo, nuevaCantidad);
             System.out.println("Producto actualizado exitosamente");
         } else {
             System.out.println("Producto no encontrado");
         }
     }
 
+    //funcion de productos con cantidad 
     private void productosCantidad() {
         StringBuilder productos = new StringBuilder("Productos y sus cantidades:\n");
 
